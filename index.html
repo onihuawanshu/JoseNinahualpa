@@ -140,26 +140,39 @@
     .job h3 { margin: 0; color: var(--green-soft); font-size: 1rem; }
     .date { color: var(--amber); font-size: .88rem; }
 
-    .youtube-window {
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .video-window {
       overflow: hidden;
       border: 1px solid var(--line);
       background: #020402;
       box-shadow: 0 0 20px rgba(104,255,121,.08);
+      min-width: 0;
     }
 
     .window-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      padding: 8px 12px;
+      gap: 9px;
+      padding: 7px 10px;
       border-bottom: 1px solid var(--line);
       background: #0d1a0e;
       color: var(--green-soft);
-      font-size: .78rem;
+      font-size: .72rem;
     }
 
-    .youtube-frame {
+    .window-label {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .video-frame {
       display: block;
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -167,12 +180,17 @@
       background: #000;
     }
 
-    .youtube-fallback {
+    .video-caption {
+      min-height: 52px;
       margin: 0;
-      padding: 13px;
+      padding: 10px;
       color: var(--dim);
-      font-size: .86rem;
+      border-top: 1px solid rgba(30,91,39,.55);
+      font-size: .8rem;
     }
+
+    .video-caption a { color: var(--green-soft); }
+    .notice { color: var(--dim); font-size: .84rem; }
 
     footer {
       padding: 15px 26px;
@@ -184,9 +202,8 @@
     @media (max-width: 700px) {
       .shell { width: min(100% - 18px, 1040px); margin: 9px auto; }
       main { padding: 20px; }
-      .grid { grid-template-columns: 1fr; }
+      .grid, .video-grid { grid-template-columns: 1fr; }
       .topbar { font-size: .7rem; }
-      .window-bar { align-items: flex-start; flex-direction: column; }
     }
 
     @media print {
@@ -195,9 +212,10 @@
       .topbar, .window-bar { background: #eee; color: #111; border-color: #333; }
       h1, h3, .summary, .chip, a { color: #111; text-shadow: none; }
       h2, .role, .date { color: #333; }
-      .muted, .prompt, footer, .youtube-fallback { color: #444; }
-      .card, .job, .youtube-window { border-color: #333; background: #fff; }
-      .youtube-frame { display: none; }
+      .muted, .prompt, footer, .notice, .video-caption { color: #444; }
+      .card, .job, .video-window { border-color: #333; background: #fff; }
+      .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .video-frame { display: none; }
     }
   </style>
 </head>
@@ -227,28 +245,6 @@
         <span class="chip"><a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a></span>
         <span class="chip"><a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">YouTube: @JoseTest7</a></span>
       </div>
-
-      <section>
-        <h2>Video channel</h2>
-        <div class="youtube-window">
-          <div class="window-bar">
-            <span>youtube@channel: ~/JoseTest7</span>
-            <a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">OPEN_CHANNEL ↗</a>
-          </div>
-          <iframe
-            class="youtube-frame"
-            src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=JoseTest7"
-            title="JoseTest7 YouTube channel uploads"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-          <p class="youtube-fallback">
-            If the embedded channel does not load, <a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">open @JoseTest7 directly on YouTube</a>.
-          </p>
-        </div>
-      </section>
 
       <section>
         <h2>Core skills</h2>
@@ -370,10 +366,42 @@
         <h2>Target roles</h2>
         <p class="summary">IT Support Specialist · Help Desk Analyst II · Desktop Support Technician · NOC Technician · Network Support Technician · Systems Administrator (Junior) · Technical Support Engineer · Data Center Technician</p>
       </section>
+
+      <!-- VIDEO PORTFOLIO: The search result confirms the channel exists, but it does not provide reliable video IDs or view rankings. Replace VIDEO_ID_01 through VIDEO_ID_04 with the actual IDs of your four most-viewed videos. -->
+      <section id="videos">
+        <h2>Most viewed videos</h2>
+        <p class="notice">Featured from <a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">@JoseTest7</a>. Replace each <code>VIDEO_ID_XX</code> placeholder with the correct YouTube video ID to load your four most-viewed videos.</p>
+
+        <div class="video-grid">
+          <article class="video-window">
+            <div class="window-bar"><span class="window-label">video_01@JoseTest7</span><span>TOP_VIEWED_01</span></div>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_01" title="JoseTest7 featured video 1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="video-caption">Replace <code>VIDEO_ID_01</code> and this caption with your #1 most-viewed video.</p>
+          </article>
+
+          <article class="video-window">
+            <div class="window-bar"><span class="window-label">video_02@JoseTest7</span><span>TOP_VIEWED_02</span></div>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_02" title="JoseTest7 featured video 2" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="video-caption">Replace <code>VIDEO_ID_02</code> and this caption with your #2 most-viewed video.</p>
+          </article>
+
+          <article class="video-window">
+            <div class="window-bar"><span class="window-label">video_03@JoseTest7</span><span>TOP_VIEWED_03</span></div>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_03" title="JoseTest7 featured video 3" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="video-caption">Replace <code>VIDEO_ID_03</code> and this caption with your #3 most-viewed video.</p>
+          </article>
+
+          <article class="video-window">
+            <div class="window-bar"><span class="window-label">video_04@JoseTest7</span><span>TOP_VIEWED_04</span></div>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_04" title="JoseTest7 featured video 4" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="video-caption">Replace <code>VIDEO_ID_04</code> and this caption with your #4 most-viewed video.</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <span class="prompt">jose@it-lab:~$</span> Built for recruiters, hiring managers, and technical teams. Replace placeholders with your actual contact information before publishing.
+      <span class="prompt">jose@it-lab:~$</span> Built for recruiters, hiring managers, and technical teams. Replace contact placeholders and YouTube video IDs before publishing.
     </footer>
   </div>
 </body>
