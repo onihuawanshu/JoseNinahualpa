@@ -14,10 +14,10 @@
       --dim: #77a97d;
       --line: #1e5b27;
       --amber: #ffca65;
+      --red: #ee6d6d;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -54,11 +54,11 @@
     .lights { display: flex; gap: 7px; }
     .light { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
     .light:nth-child(2) { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
-    .light:nth-child(3) { background: #ee6d6d; box-shadow: 0 0 8px #ee6d6d; }
+    .light:nth-child(3) { background: var(--red); box-shadow: 0 0 8px var(--red); }
 
     main { padding: 26px; }
-
     .prompt { color: var(--dim); }
+
     .cursor {
       display: inline-block;
       width: .62em;
@@ -140,6 +140,40 @@
     .job h3 { margin: 0; color: var(--green-soft); font-size: 1rem; }
     .date { color: var(--amber); font-size: .88rem; }
 
+    .youtube-window {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #020402;
+      box-shadow: 0 0 20px rgba(104,255,121,.08);
+    }
+
+    .window-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--line);
+      background: #0d1a0e;
+      color: var(--green-soft);
+      font-size: .78rem;
+    }
+
+    .youtube-frame {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      background: #000;
+    }
+
+    .youtube-fallback {
+      margin: 0;
+      padding: 13px;
+      color: var(--dim);
+      font-size: .86rem;
+    }
+
     footer {
       padding: 15px 26px;
       color: var(--dim);
@@ -152,16 +186,18 @@
       main { padding: 20px; }
       .grid { grid-template-columns: 1fr; }
       .topbar { font-size: .7rem; }
+      .window-bar { align-items: flex-start; flex-direction: column; }
     }
 
     @media print {
       body { background: #fff; color: #111; font-size: 10pt; }
       .shell { width: 100%; margin: 0; box-shadow: none; border-color: #333; background: #fff; }
-      .topbar { background: #eee; color: #111; border-color: #333; }
+      .topbar, .window-bar { background: #eee; color: #111; border-color: #333; }
       h1, h3, .summary, .chip, a { color: #111; text-shadow: none; }
       h2, .role, .date { color: #333; }
-      .muted, .prompt, footer { color: #444; }
-      .card, .job { border-color: #333; background: #fff; }
+      .muted, .prompt, footer, .youtube-fallback { color: #444; }
+      .card, .job, .youtube-window { border-color: #333; background: #fff; }
+      .youtube-frame { display: none; }
     }
   </style>
 </head>
@@ -189,7 +225,30 @@
         <span class="chip"><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></span>
         <span class="chip">YOUR_PHONE_NUMBER</span>
         <span class="chip"><a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a></span>
+        <span class="chip"><a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">YouTube: @JoseTest7</a></span>
       </div>
+
+      <section>
+        <h2>Video channel</h2>
+        <div class="youtube-window">
+          <div class="window-bar">
+            <span>youtube@channel: ~/JoseTest7</span>
+            <a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">OPEN_CHANNEL ↗</a>
+          </div>
+          <iframe
+            class="youtube-frame"
+            src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=JoseTest7"
+            title="JoseTest7 YouTube channel uploads"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          <p class="youtube-fallback">
+            If the embedded channel does not load, <a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">open @JoseTest7 directly on YouTube</a>.
+          </p>
+        </div>
+      </section>
 
       <section>
         <h2>Core skills</h2>
@@ -319,4 +378,3 @@
   </div>
 </body>
 </html>
-
