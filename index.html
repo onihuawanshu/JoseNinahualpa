@@ -1,1 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resume of Jose Ninahualpa — IT Support, Networking, Systems Administration, and .NET Development.">
+  <title>Jose Ninahualpa | IT Resume</title>
+  <style>
+    :root {
+      --bg: #050805;
+      --panel: #081108;
+      --green: #68ff79;
+      --green-soft: #b6ffbc;
+      --dim: #77a97d;
+      --line: #1e5b27;
+      --amber: #ffca65;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--green);
+      background:
+        repeating-linear-gradient(0deg, rgba(104,255,121,.025) 0, rgba(104,255,121,.025) 1px, transparent 1px, transparent 4px),
+        radial-gradient(circle at top, #102912 0%, var(--bg) 48%);
+      font-family: "Courier New", Courier, monospace;
+      line-height: 1.6;
+    }
+
+    .shell {
+      width: min(1040px, calc(100% - 32px));
+      margin: 28px auto;
+      border: 1px solid var(--line);
+      background: rgba(5, 12, 6, .94);
+      box-shadow: 0 0 0 4px rgba(104,255,121,.04), 0 0 35px rgba(104,255,121,.13);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--green-soft);
+      background: #0d1a0e;
+      font-size: .83rem;
+    }
+
+    .lights { display: flex; gap: 7px; }
+    .light { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
+    .light:nth-child(2) { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+    .light:nth-child(3) { background: #ee6d6d; box-shadow: 0 0 8px #ee6d6d; }
+
+    main { padding: 26px; }
+
+    .prompt { color: var(--dim); }
+    .cursor {
+      display: inline-block;
+      width: .62em;
+      height: 1.15em;
+      margin-left: 4px;
+      vertical-align: -0.2em;
+      background: var(--green);
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin: 6px 0 4px;
+      color: var(--green-soft);
+      font-size: clamp(1.55rem, 4vw, 2.45rem);
+      letter-spacing: .04em;
+      line-height: 1.15;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(104,255,121,.4);
+    }
+
+    .role { color: var(--amber); font-size: 1rem; }
+    .summary { max-width: 900px; color: var(--green-soft); }
+
+    .contact, .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 14px 0 4px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      padding: 4px 8px;
+      color: var(--green-soft);
+      font-size: .86rem;
+    }
+
+    a { color: var(--green); text-decoration: none; border-bottom: 1px dotted var(--green); }
+    a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+
+    section { margin-top: 31px; }
+
+    h2 {
+      margin-bottom: 14px;
+      color: var(--amber);
+      font-size: 1rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h2::before { content: "[ "; color: var(--dim); }
+    h2::after { content: " ]"; color: var(--dim); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      padding: 15px;
+      background: rgba(10, 30, 12, .35);
+    }
+
+    .card h3 { color: var(--green-soft); margin-bottom: 6px; font-size: 1rem; }
+    .muted { color: var(--dim); }
+
+    ul { margin: 10px 0 0; padding-left: 1.25rem; }
+    li { margin: 5px 0; }
+    li::marker { color: var(--amber); }
+
+    .job { border-left: 2px solid var(--green); padding: 2px 0 2px 16px; margin: 18px 0; }
+    .job-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .job h3 { margin: 0; color: var(--green-soft); font-size: 1rem; }
+    .date { color: var(--amber); font-size: .88rem; }
+
+    footer {
+      padding: 15px 26px;
+      color: var(--dim);
+      border-top: 1px solid var(--line);
+      font-size: .82rem;
+    }
+
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 18px, 1040px); margin: 9px auto; }
+      main { padding: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .topbar { font-size: .7rem; }
+    }
+
+    @media print {
+      body { background: #fff; color: #111; font-size: 10pt; }
+      .shell { width: 100%; margin: 0; box-shadow: none; border-color: #333; background: #fff; }
+      .topbar { background: #eee; color: #111; border-color: #333; }
+      h1, h3, .summary, .chip, a { color: #111; text-shadow: none; }
+      h2, .role, .date { color: #333; }
+      .muted, .prompt, footer { color: #444; }
+      .card, .job { border-color: #333; background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="lights" aria-hidden="true"><span class="light"></span><span class="light"></span><span class="light"></span></div>
+      <div>resume@terminal: ~/profile</div>
+      <div>STATUS: AVAILABLE_FOR_OPPORTUNITIES</div>
+    </header>
+
+    <main>
+      <div class="prompt">jose@it-lab:~$ cat resume.txt<span class="cursor" aria-hidden="true"></span></div>
+      <h1>Jose Ninahualpa</h1>
+      <p class="role">IT Support | Networking | Systems Administration | Technical Support</p>
+      <p class="summary">
+        Bilingual IT support professional with approximately six years of technical-support experience and extensive hands-on IT background. Skilled in troubleshooting connectivity, supporting residential and business users, working with Windows and Linux environments, networking fundamentals, DNS, virtual machines, databases, and customer-facing incident resolution.
+      </p>
+
+      <div class="contact">
+        <span class="chip">Manassas, Virginia</span>
+        <span class="chip">English / Spanish</span>
+        <span class="chip">Open to IT Support, NOC, Desktop Support, Network Support, and Junior Systems Administration</span>
+        <!-- Replace the placeholders below with your real contact details -->
+        <span class="chip"><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></span>
+        <span class="chip">YOUR_PHONE_NUMBER</span>
+        <span class="chip"><a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a></span>
+      </div>
+
+      <section>
+        <h2>Core skills</h2>
+        <div class="tags">
+          <span class="chip">Technical troubleshooting</span>
+          <span class="chip">TCP/IP & IPv4/IPv6</span>
+          <span class="chip">DNS / BIND</span>
+          <span class="chip">Windows 10/11</span>
+          <span class="chip">Linux / Ubuntu</span>
+          <span class="chip">VMs & lab environments</span>
+          <span class="chip">Network diagnostics</span>
+          <span class="chip">Service desk / ticketing</span>
+          <span class="chip">Remote support</span>
+          <span class="chip">Customer incident resolution</span>
+          <span class="chip">PostgreSQL / SQL</span>
+          <span class="chip">C# / .NET</span>
+          <span class="chip">Entity Framework Core</span>
+          <span class="chip">Bash / Shell scripting</span>
+          <span class="chip">Technical documentation</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Professional experience</h2>
+        <article class="job">
+          <div class="job-header">
+            <h3>Technical Support Representative / Connectivity Support</h3>
+            <span class="date">2020 — Present</span>
+          </div>
+          <p class="muted">Telecommunications technical support | Manassas, VA</p>
+          <ul>
+            <li>Provide technical troubleshooting for residential and business connectivity issues, including internet outages, Wi-Fi, modem/router behavior, account-related service issues, and escalations</li>
+            <li>Use structured diagnostic questioning to isolate device, Wi-Fi, LAN, service, and infrastructure-related problems</li>
+            <li>Support high-volume customer interactions while documenting findings, following workflows, and coordinating appropriate resolutions</li>
+            <li>Maintain strong self-resolution results and initial-contact resolution performance through practical, customer-focused troubleshooting</li>
+            <li>Communicate complex technical information clearly to users with different levels of technical knowledge</li>
+            <li>Work with performance measures such as resolution, transfer prevention, truck-roll prevention, handle time, schedule adherence, and customer sentiment</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3>Independent IT Learning & Home Lab Projects</h3>
+            <span class="date">Ongoing</span>
+          </div>
+          <p class="muted">Hands-on systems, networking, database, and development practice</p>
+          <ul>
+            <li>Build and manage Windows and Linux virtual-machine lab environments for system administration and networking practice</li>
+            <li>Configure and troubleshoot DNS services using BIND, including zones, records, and service validation</li>
+            <li>Practice subnetting, VLSM, TCP/IP, ICMP, IPv4/IPv6, routing concepts, and packet-level troubleshooting</li>
+            <li>Develop .NET and PostgreSQL projects using C#, SQL, PL/pgSQL, Entity Framework Core, migrations, and API design patterns</li>
+            <li>Use shell scripting and command-line tools to automate administrative and troubleshooting tasks</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Selected strengths</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Support & operations</h3>
+            <ul>
+              <li>High-volume technical support</li>
+              <li>Root-cause-oriented troubleshooting</li>
+              <li>Incident ownership and escalation judgment</li>
+              <li>Customer de-escalation and plain-language communication</li>
+              <li>Knowledge of residential and business services</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Infrastructure & systems</h3>
+            <ul>
+              <li>Windows and Linux administration fundamentals</li>
+              <li>DNS, TCP/IP, DHCP concepts, and network troubleshooting</li>
+              <li>Virtualization and VM lab setup</li>
+              <li>CLI-based diagnostics and Bash scripting</li>
+              <li>Documentation and repeatable support procedures</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Development & data</h3>
+            <ul>
+              <li>C# and .NET application development</li>
+              <li>REST API concepts and testing</li>
+              <li>PostgreSQL, SQL, and relational database design</li>
+              <li>Entity Framework Core and migrations</li>
+              <li>pgAdmin and database troubleshooting</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Working style</h3>
+            <ul>
+              <li>Bilingual communication in English and Spanish</li>
+              <li>Comfortable with command-line tools</li>
+              <li>Methodical, customer-focused, and calm under pressure</li>
+              <li>Continuous learner with practical lab-based approach</li>
+              <li>Ready for Tier 2 support and infrastructure growth</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education & development</h2>
+        <div class="card">
+          <h3>Information Technology / Networking Studies</h3>
+          <p class="muted">Coursework and practical study in computer networking, systems administration, database design, operating systems, and application development.</p>
+          <ul>
+            <li>CompTIA-oriented networking fundamentals</li>
+            <li>Linux file permissions, users, services, and administration</li>
+            <li>Database design, ORM patterns, PostgreSQL, and SQL</li>
+            <li>Network protocols, subnetting, VLSM, and packet analysis</li>
+            <li>.NET full-stack and API development</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Target roles</h2>
+        <p class="summary">IT Support Specialist · Help Desk Analyst II · Desktop Support Technician · NOC Technician · Network Support Technician · Systems Administrator (Junior) · Technical Support Engineer · Data Center Technician</p>
+      </section>
+    </main>
+
+    <footer>
+      <span class="prompt">jose@it-lab:~$</span> Built for recruiters, hiring managers, and technical teams. Replace placeholders with your actual contact information before publishing.
+    </footer>
+  </div>
+</body>
+</html>
 
