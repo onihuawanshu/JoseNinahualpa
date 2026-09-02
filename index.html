@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Resume of Jose Ninahualpa — bilingual IT Support, Systems, Networking, and Technical Operations professional.">
+  <meta name="description" content="Resume of Jose Ninahualpa — IT Support, Networking, Systems Administration, and .NET Development.">
   <title>Jose Ninahualpa | IT Resume</title>
   <style>
     :root {
       --bg: #050805;
+      --panel: #081108;
       --green: #68ff79;
       --green-soft: #b6ffbc;
       --dim: #77a97d;
       --line: #1e5b27;
       --amber: #ffca65;
-      --red: #ee6d6d;
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -53,11 +54,11 @@
     .lights { display: flex; gap: 7px; }
     .light { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
     .light:nth-child(2) { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
-    .light:nth-child(3) { background: var(--red); box-shadow: 0 0 8px var(--red); }
+    .light:nth-child(3) { background: #ee6d6d; box-shadow: 0 0 8px #ee6d6d; }
 
     main { padding: 26px; }
-    .prompt { color: var(--dim); }
 
+    .prompt { color: var(--dim); }
     .cursor {
       display: inline-block;
       width: .62em;
@@ -83,7 +84,7 @@
     }
 
     .role { color: var(--amber); font-size: 1rem; }
-    .summary { max-width: 920px; color: var(--green-soft); }
+    .summary { max-width: 900px; color: var(--green-soft); }
 
     .contact, .tags {
       display: flex;
@@ -139,58 +140,6 @@
     .job h3 { margin: 0; color: var(--green-soft); font-size: 1rem; }
     .date { color: var(--amber); font-size: .88rem; }
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .video-window {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #020402;
-      box-shadow: 0 0 20px rgba(104,255,121,.08);
-      min-width: 0;
-    }
-
-    .window-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 9px;
-      padding: 7px 10px;
-      border-bottom: 1px solid var(--line);
-      background: #0d1a0e;
-      color: var(--green-soft);
-      font-size: .72rem;
-    }
-
-    .window-label {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
-    .video-frame {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 0;
-      background: #000;
-    }
-
-    .video-caption {
-      min-height: 72px;
-      margin: 0;
-      padding: 10px;
-      color: var(--dim);
-      border-top: 1px solid rgba(30,91,39,.55);
-      font-size: .8rem;
-    }
-
-    .video-title { color: var(--green-soft); display: block; margin-bottom: 3px; }
-    .notice { color: var(--dim); font-size: .84rem; }
-
     footer {
       padding: 15px 26px;
       color: var(--dim);
@@ -201,20 +150,18 @@
     @media (max-width: 700px) {
       .shell { width: min(100% - 18px, 1040px); margin: 9px auto; }
       main { padding: 20px; }
-      .grid, .video-grid { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
       .topbar { font-size: .7rem; }
     }
 
     @media print {
       body { background: #fff; color: #111; font-size: 10pt; }
       .shell { width: 100%; margin: 0; box-shadow: none; border-color: #333; background: #fff; }
-      .topbar, .window-bar { background: #eee; color: #111; border-color: #333; }
+      .topbar { background: #eee; color: #111; border-color: #333; }
       h1, h3, .summary, .chip, a { color: #111; text-shadow: none; }
       h2, .role, .date { color: #333; }
-      .muted, .prompt, footer, .notice, .video-caption { color: #444; }
-      .card, .job, .video-window { border-color: #333; background: #fff; }
-      .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .video-frame { display: none; }
+      .muted, .prompt, footer { color: #444; }
+      .card, .job { border-color: #333; background: #fff; }
     }
   </style>
 </head>
@@ -229,53 +176,39 @@
     <main>
       <div class="prompt">jose@it-lab:~$ cat resume.txt<span class="cursor" aria-hidden="true"></span></div>
       <h1>Jose Ninahualpa</h1>
-      <p class="role">Bilingual IT Support | Systems | Networking | Technical Operations</p>
+      <p class="role">IT Support | Networking | Systems Administration | Technical Support</p>
       <p class="summary">
-        Bilingual IT support and technical operations professional fluent in English and Spanish, with 30 years of hands-on IT experience and six years with the same Internet Service Provider. Experienced in connectivity troubleshooting, PC upgrades, information recovery, Windows and Linux environments, virtualized labs, technical customer support, and practical problem-solving for home-user and corporate environments.
+        Bilingual IT support professional with approximately six years of technical-support experience and extensive hands-on IT background. Skilled in troubleshooting connectivity, supporting residential and business users, working with Windows and Linux environments, networking fundamentals, DNS, virtual machines, databases, and customer-facing incident resolution.
       </p>
 
       <div class="contact">
-        <span class="chip">Orlando, Florida</span>
-        <span class="chip">Fluent: English & Spanish</span>
-        <span class="chip">30 Years of IT Experience</span>
-        <span class="chip">6 Years with Current ISP Employer</span>
-        <span class="chip">Open to IT Support, Desktop Support, Network Support, NOC, and Systems Operations</span>
+        <span class="chip">Manassas, Virginia</span>
+        <span class="chip">English / Spanish</span>
+        <span class="chip">Open to IT Support, NOC, Desktop Support, Network Support, and Junior Systems Administration</span>
         <!-- Replace the placeholders below with your real contact details -->
         <span class="chip"><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></span>
         <span class="chip">YOUR_PHONE_NUMBER</span>
         <span class="chip"><a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a></span>
-        <span class="chip"><a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">YouTube: @JoseTest7</a></span>
       </div>
-
-      <section>
-        <h2>Professional profile</h2>
-        <div class="card">
-          <p class="summary">
-            Technical professional who combines long-term hands-on IT experience with customer-facing support and operational discipline. Brings a global, cost-aware approach to technology decisions: evaluates optimal solutions based on security, reliability, budget, maintainability, and business impact. Comfortable leveraging a worldwide network of technology contacts and resources to research, validate, and identify practical solutions.
-          </p>
-        </div>
-      </section>
 
       <section>
         <h2>Core skills</h2>
         <div class="tags">
-          <span class="chip">English & Spanish communication</span>
           <span class="chip">Technical troubleshooting</span>
           <span class="chip">TCP/IP & IPv4/IPv6</span>
-          <span class="chip">Windows 10/11 support</span>
+          <span class="chip">DNS / BIND</span>
+          <span class="chip">Windows 10/11</span>
           <span class="chip">Linux / Ubuntu</span>
-          <span class="chip">PC upgrades & hardware support</span>
-          <span class="chip">Corporate & end-user environments</span>
-          <span class="chip">Information recovery</span>
-          <span class="chip">Data backup awareness</span>
           <span class="chip">VMs & lab environments</span>
           <span class="chip">Network diagnostics</span>
           <span class="chip">Service desk / ticketing</span>
           <span class="chip">Remote support</span>
           <span class="chip">Customer incident resolution</span>
+          <span class="chip">PostgreSQL / SQL</span>
+          <span class="chip">C# / .NET</span>
+          <span class="chip">Entity Framework Core</span>
           <span class="chip">Bash / Shell scripting</span>
           <span class="chip">Technical documentation</span>
-          <span class="chip">Cost, security & budget analysis</span>
         </div>
       </section>
 
@@ -286,29 +219,29 @@
             <h3>Technical Support Representative / Connectivity Support</h3>
             <span class="date">2020 — Present</span>
           </div>
-          <p class="muted">Internet Service Provider | Orlando, Florida</p>
+          <p class="muted">Telecommunications technical support | Manassas, VA</p>
           <ul>
-            <li>Six years of continuous experience with the same ISP position, delivering technical support for residential and business connectivity services</li>
-            <li>Provide English and Spanish technical support for internet outages, Wi-Fi, modem and router behavior, account-related service issues, and escalations</li>
-            <li>Use structured troubleshooting to isolate device, Wi-Fi, LAN, service, and infrastructure-related problems</li>
+            <li>Provide technical troubleshooting for residential and business connectivity issues, including internet outages, Wi-Fi, modem/router behavior, account-related service issues, and escalations</li>
+            <li>Use structured diagnostic questioning to isolate device, Wi-Fi, LAN, service, and infrastructure-related problems</li>
             <li>Support high-volume customer interactions while documenting findings, following workflows, and coordinating appropriate resolutions</li>
-            <li>Explain technical issues clearly to customers with varying levels of technical knowledge and de-escalate complex service interactions</li>
-            <li>Work with operational measures such as resolution, transfer prevention, truck-roll prevention, handle time, schedule adherence, and customer sentiment</li>
+            <li>Maintain strong self-resolution results and initial-contact resolution performance through practical, customer-focused troubleshooting</li>
+            <li>Communicate complex technical information clearly to users with different levels of technical knowledge</li>
+            <li>Work with performance measures such as resolution, transfer prevention, truck-roll prevention, handle time, schedule adherence, and customer sentiment</li>
           </ul>
         </article>
 
         <article class="job">
           <div class="job-header">
-            <h3>IT Support, PC Upgrade & Information Recovery Experience</h3>
-            <span class="date">30 Years — Present</span>
+            <h3>Independent IT Learning & Home Lab Projects</h3>
+            <span class="date">Ongoing</span>
           </div>
-          <p class="muted">Hands-on IT experience across end-user, small-business, and corporate environments</p>
+          <p class="muted">Hands-on systems, networking, database, and development practice</p>
           <ul>
-            <li>Upgrade, configure, maintain, and troubleshoot desktop and laptop PCs for home users and corporate work environments</li>
-            <li>Assess hardware compatibility, performance bottlenecks, operating-system stability, storage health, memory requirements, and upgrade paths</li>
-            <li>Support information recovery efforts, data-access troubleshooting, backup awareness, and safe handling of user information</li>
-            <li>Build and manage Windows and Linux virtual-machine environments for systems, networking, and troubleshooting practice</li>
-            <li>Use command-line tools and shell scripting for administrative tasks, diagnostics, and repeatable workflows</li>
+            <li>Build and manage Windows and Linux virtual-machine lab environments for system administration and networking practice</li>
+            <li>Configure and troubleshoot DNS services using BIND, including zones, records, and service validation</li>
+            <li>Practice subnetting, VLSM, TCP/IP, ICMP, IPv4/IPv6, routing concepts, and packet-level troubleshooting</li>
+            <li>Develop .NET and PostgreSQL projects using C#, SQL, PL/pgSQL, Entity Framework Core, migrations, and API design patterns</li>
+            <li>Use shell scripting and command-line tools to automate administrative and troubleshooting tasks</li>
           </ul>
         </article>
       </section>
@@ -320,99 +253,68 @@
             <h3>Support & operations</h3>
             <ul>
               <li>High-volume technical support</li>
-              <li>Customer communication in English and Spanish</li>
               <li>Root-cause-oriented troubleshooting</li>
               <li>Incident ownership and escalation judgment</li>
-              <li>Clear technical explanations for nontechnical users</li>
+              <li>Customer de-escalation and plain-language communication</li>
+              <li>Knowledge of residential and business services</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Systems & endpoint support</h3>
+            <h3>Infrastructure & systems</h3>
             <ul>
-              <li>Windows and Linux support fundamentals</li>
-              <li>PC upgrades, repair, and hardware compatibility</li>
-              <li>Desktop and laptop performance optimization</li>
+              <li>Windows and Linux administration fundamentals</li>
+              <li>DNS, TCP/IP, DHCP concepts, and network troubleshooting</li>
               <li>Virtualization and VM lab setup</li>
-              <li>Information recovery and data-handling awareness</li>
+              <li>CLI-based diagnostics and Bash scripting</li>
+              <li>Documentation and repeatable support procedures</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Networks & connectivity</h3>
+            <h3>Development & data</h3>
             <ul>
-              <li>TCP/IP, IPv4/IPv6, Wi-Fi, and LAN troubleshooting</li>
-              <li>Modem, router, endpoint, and service isolation</li>
-              <li>Residential and business connectivity support</li>
-              <li>Network diagnostics and escalation documentation</li>
-              <li>Outage and infrastructure-impact communication</li>
+              <li>C# and .NET application development</li>
+              <li>REST API concepts and testing</li>
+              <li>PostgreSQL, SQL, and relational database design</li>
+              <li>Entity Framework Core and migrations</li>
+              <li>pgAdmin and database troubleshooting</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Solution strategy</h3>
+            <h3>Working style</h3>
             <ul>
-              <li>Cost-conscious technology recommendations</li>
-              <li>Security, budget, and reliability trade-off analysis</li>
-              <li>Research-driven selection of practical solutions</li>
-              <li>Global technology contacts and resource network</li>
-              <li>Focus on sustainable, maintainable outcomes</li>
+              <li>Bilingual communication in English and Spanish</li>
+              <li>Comfortable with command-line tools</li>
+              <li>Methodical, customer-focused, and calm under pressure</li>
+              <li>Continuous learner with practical lab-based approach</li>
+              <li>Ready for Tier 2 support and infrastructure growth</li>
             </ul>
           </article>
         </div>
       </section>
 
       <section>
-        <h2>Education & technical development</h2>
+        <h2>Education & development</h2>
         <div class="card">
           <h3>Information Technology / Networking Studies</h3>
-          <p class="muted">Ongoing coursework and practical study in computer networking, systems administration, operating systems, endpoint support, information recovery, and IT infrastructure.</p>
+          <p class="muted">Coursework and practical study in computer networking, systems administration, database design, operating systems, and application development.</p>
           <ul>
-            <li>Networking fundamentals, TCP/IP, subnetting, VLSM, ICMP, and packet analysis</li>
-            <li>Linux administration, file permissions, users, services, and command-line tools</li>
-            <li>Windows support, PC hardware, operating-system troubleshooting, and endpoint upgrades</li>
-            <li>Virtual machines, system testing, and hands-on lab environments</li>
-            <li>Security-aware troubleshooting, backup concepts, and responsible data handling</li>
+            <li>CompTIA-oriented networking fundamentals</li>
+            <li>Linux file permissions, users, services, and administration</li>
+            <li>Database design, ORM patterns, PostgreSQL, and SQL</li>
+            <li>Network protocols, subnetting, VLSM, and packet analysis</li>
+            <li>.NET full-stack and API development</li>
           </ul>
         </div>
       </section>
 
       <section>
         <h2>Target roles</h2>
-        <p class="summary">IT Support Specialist · Desktop Support Technician · Technical Support Engineer · Network Support Technician · NOC Technician · Systems Operations Technician · Field Support Technician · Data Center Technician · IT Asset & Endpoint Support</p>
-      </section>
-
-      <section id="videos">
-        <h2>Featured video portfolio</h2>
-        <p class="notice">Hands-on Linux and VMware demonstrations from <a href="https://www.youtube.com/@JoseTest7" target="_blank" rel="noreferrer">@JoseTest7</a>.</p>
-
-        <div class="video-grid">
-          <article class="video-window">
-            <div class="window-bar"><span class="window-label">video_01@JoseTest7</span><span>VMWARE_LAB</span></div>
-            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/Ec692Ree8us" title="Xubuntu 26.04 Desktop Minimal on VMware Workstation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-caption"><a class="video-title" href="https://youtu.be/Ec692Ree8us" target="_blank" rel="noreferrer">Xubuntu 26.04 Desktop Minimal on VMware Workstation</a>Linux virtualization demonstration · 26:36</p>
-          </article>
-
-          <article class="video-window">
-            <div class="window-bar"><span class="window-label">video_02@JoseTest7</span><span>VMWARE_LAB</span></div>
-            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/mUpr7_8tb74" title="CachyOS Desktop Linux on VMware with Brave" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-caption"><a class="video-title" href="https://youtu.be/mUpr7_8tb74" target="_blank" rel="noreferrer">CachyOS Desktop Linux on VMware with Brave</a>Linux installation and virtual-machine test · 27:27</p>
-          </article>
-
-          <article class="video-window">
-            <div class="window-bar"><span class="window-label">video_03@JoseTest7</span><span>VMWARE_LAB</span></div>
-            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/Qmz1uuiyDcU" title="Zyra OS 26 on VMware" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-caption"><a class="video-title" href="https://youtu.be/Qmz1uuiyDcU" target="_blank" rel="noreferrer">Zyra OS 26 on VMware</a>Operating-system test in VMware Workstation · 24:35</p>
-          </article>
-
-          <article class="video-window">
-            <div class="window-bar"><span class="window-label">video_04@JoseTest7</span><span>LEGACY_HW_LAB</span></div>
-            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/0kbGi8QvEbU" title="Linux Lite 8 on VMware Workstation for older laptops" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p class="video-caption"><a class="video-title" href="https://youtu.be/0kbGi8QvEbU" target="_blank" rel="noreferrer">Linux Lite 8 on VMware Workstation</a>Legacy-hardware optimization and swap configuration · 48:06</p>
-          </article>
-        </div>
+        <p class="summary">IT Support Specialist · Help Desk Analyst II · Desktop Support Technician · NOC Technician · Network Support Technician · Systems Administrator (Junior) · Technical Support Engineer · Data Center Technician</p>
       </section>
     </main>
 
     <footer>
-      <span class="prompt">jose@it-lab:~$</span> Built for recruiters, hiring managers, and technical teams. Replace contact placeholders before publishing.
+      <span class="prompt">jose@it-lab:~$</span> Built for recruiters, hiring managers, and technical teams. Replace placeholders with your actual contact information before publishing.
     </footer>
   </div>
 </body>
